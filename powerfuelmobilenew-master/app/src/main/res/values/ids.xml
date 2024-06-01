@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="fragmentContainer" type="id" />
+    <item name="button_login" type="id" />
+    <item name="button_settings" type="id" />
+    <item name="button_orders" type="id" />
+    <item name="profile_phone" type="id" />
+    <item name="profile_name" type="id" />
+    <item name="profile_image" type="id" />
+    <item name="product_image" type="id" />
+    <item name="product_name" type="id" />
+    <item name="add_to_cart_button" type="id" />
+    <item name="product_price" type="id" />
+</resources>

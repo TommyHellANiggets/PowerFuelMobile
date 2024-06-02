@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_orders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_no_orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="В настоящее время нет заказов"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
+
+    <Button
+        android:id="@+id/button_shopping"
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_no_orders"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="551dp"
+        android:background="@drawable/rounded_button_orange"
+        android:text="За покупками"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>

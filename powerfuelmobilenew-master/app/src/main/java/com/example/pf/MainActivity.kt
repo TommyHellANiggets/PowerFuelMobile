@@ -7,15 +7,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-
-    override fun onCreate(savedBundle: Bundle?) {
-        super.onCreate(savedBundle)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
@@ -38,6 +38,36 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .commit()
+    }
+
+    fun openOrdersFragment(view: View) {
+        val ordersFragment: Fragment = OrdersFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, ordersFragment)
+            .addToBackStack(null)
+            .commit()
+    }
+}
+
+class OrdersFragment : Fragment() {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_orders, container, false)
+
+        val buttonShopping = view.findViewById<Button>(R.id.button_shopping)
+        buttonShopping.setOnClickListener {
+            // Navigate to HomeFragment
+            val homeFragment = HomeFragment()
+            fragmentManager?.beginTransaction()?.apply {
+                replace(R.id.fragmentContainer, homeFragment)
+                addToBackStack(null)
+                commit()
+            }
+        }
+
+        return view
     }
 }
 
